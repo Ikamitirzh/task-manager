@@ -1,0 +1,17 @@
+body{
+    background-color: rgba(150, 127, 255, 0.411);
+    
+}
+
+.app{
+    background-color: rgb(152, 152, 238);
+    width:300px ;
+    height: auto;
+    padding: 40px 60px;
+    
+    
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+}
