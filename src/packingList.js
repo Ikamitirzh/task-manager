@@ -6,8 +6,14 @@ export default function Packinglist({
   onDeleteItem,
   onToggleItem,
   onClearList,
-  onEditItem
+  setEditTodo
+  
 }) {
+
+  const handleEditItem = (id)=>{
+    const findItem = items.find((item)=> item.id === id);
+    setEditTodo(findItem);
+  }
  
   let temp = items;
   return (
@@ -18,7 +24,7 @@ export default function Packinglist({
             item={item}
             onDeleteItem={onDeleteItem}
             onToggleItem={onToggleItem}
-            onEditItem={onEditItem}
+            onEditItem={handleEditItem}
             key={item.id}
           />
         ))}

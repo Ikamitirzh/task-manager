@@ -43,7 +43,7 @@ body {
 
 h1 {
   text-align: center;
-  background-color: #32f0f0;
+  background-image: linear-gradient(to bottom,  #06b7d6 30%, #06d6a0 70%);
   font-family: "Monoton";
   font-size: 8rem;
   text-transform: uppercase;
@@ -51,10 +51,11 @@ h1 {
   word-spacing: 30px;
   letter-spacing: -5px;
   padding: 2.4rem 0;
+  
 }
 
 .add-form {
-  background-color: #1f7be5;
+  background-image: linear-gradient(to bottom,#06d6a0 30%, #8bd4c1 70%);
   padding: 2.8rem 0;
   display: flex;
   align-items: center;
@@ -71,7 +72,7 @@ button,
 select,
 input {
   background-color: #ffebb3;
-  color: #5a3e2b;
+  color: #504a46;
   font-family: inherit;
   border: none;
   border-radius: 10rem;
@@ -83,12 +84,12 @@ input {
 
 .add-form button {
   text-transform: uppercase;
-  background-color: #76c7ad;
+  background-color: #eec718;
 }
 
 .list {
-  background-color: #392b5a;
-  color: #ffebb3;
+  background-image: linear-gradient(to bottom, #8bd4c1 30%, #26547c 70%);
+  color: #020101;
   padding: 4rem 0;
 
   display: flex;
@@ -133,7 +134,7 @@ input[type="checkbox"] {
 
 .list li button {
   cursor: pointer;
-  background-color: rgb(169, 169, 204);
+  background-color: rgb(243, 247, 34);
   border: none;
   font-size: 1.8rem;
   padding: 0.8rem;

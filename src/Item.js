@@ -1,17 +1,16 @@
 export default function Item({ item, onDeleteItem, onToggleItem, onEditItem }) {
-    return (
-      <li>
-        <input
-          type="checkbox"
-          value={item.packed}
-          onChange={() => onToggleItem(item.id)}
-        />
-        <span style={item.packed ? { textDecoration: "line-through" } : {}}>
-          {item.description}
-        </span>
-        <button onClick={() => onEditItem(item.id)} >Edit</button>
-        <button onClick={() => onDeleteItem(item.id)}>❌</button>
-      </li>
-    );
-  }
-  
+  return (
+    <li>
+      <input
+        type="checkbox"
+        value={item.packed}
+        onChange={() => onToggleItem(item.id)}
+      />
+      <span style={item.packed ? { textDecoration: "line-through" } : {}}>
+        {item.description}
+      </span>
+      <button onClick={() => onEditItem(item.id)}>Edit</button>
+      <button onClick={() => onDeleteItem(item.id)}>❌</button>
+    </li>
+  );
+}

@@ -7,6 +7,7 @@ import Packinglist from "./packingList.js"
 
 export default function App() {
   const [items, setItems] = useState([]);
+  const [editTodo, setEditTodo]= useState(null)
 
   function handleAddItems(item) {
     setItems((items) => [...items, item]);
@@ -41,14 +42,14 @@ export default function App() {
     <div className="app">
       
       <h1>ikami TodoList</h1>
-      <Form onAddItems={handleAddItems} editItem={handleEditItem} />
+      <Form onAddItems={handleAddItems} editTodo={editTodo} setEditTodo={setEditTodo} items={items} setItems={setItems}/>
       
       <Packinglist 
         items={items}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
         onClearList={handleClearList}
-        onEditItem={handleEditItem}
+        setEditTodo={setEditTodo}
       />
    
     </div>

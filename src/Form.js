@@ -1,7 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function Form({onAddItems}) {
+export default function Form({onAddItems, editTodo, setEditTodo, items, setItems}) {
     const [description, setDescription] = useState("")
+
+    const updateTodo = (description, id, packed) => {
+      const newTodo = items.map((item) =>
+      item.id === id ? {description, id , packed} : item
+      )
+    
+    setItems(newTodo);
+    setEditTodo("");
+  };
+
+  useEffect(() => {
+    if(editTodo){
+      setDescription(editTodo.description);
+
+    }else{
+      setDescription("");
+    }
+  }, [setDescription,editTodo])
 
    
   
@@ -10,16 +28,25 @@ export default function Form({onAddItems}) {
       e.preventDefault();
   
       if(!description) return;
-  
-      const newItem = {description, 
+
+      if(!editTodo){
+         const newItem = {description, 
         packed:false, id: Date.now()}
+
+        console.log(newItem);
+  
+        onAddItems(newItem)
+    
+        setDescription("");
+      }else{
+        updateTodo(description, editTodo.id, editTodo.packed)
+      }
+
+
+     
         
   
-      console.log(newItem);
-  
-      onAddItems(newItem)
-  
-      setDescription("");
+     
    
     }
 
@@ -31,7 +58,7 @@ export default function Form({onAddItems}) {
       <form className="add-form"  onSubmit={handleSubmit}>
         <input type="text"  placeholder="Tasks..." value={description}
         onChange={(e) => setDescription(e.target.value)} />
-        <button>Add</button>
+        <button>{editTodo ? "Update" : "Add"}</button>
       </form>
     )
   }
