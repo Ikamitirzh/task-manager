@@ -1,17 +1,37 @@
 body{
-    background-color: rgba(150, 127, 255, 0.411);
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    /* background-color: #f4f4f4; */
+    background-image: linear-gradient(to left, #26547c 30%, #06d6a0 70%);
+    margin: 0;
+    padding: 0;
     
 }
 
 .app{
-    background-color: rgb(152, 152, 238);
-    width:300px ;
-    height: auto;
-    padding: 40px 60px;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 20px ;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     
-    
-    display: flex;
-    justify-content:center;
-    align-items: center;
 
 }
+
+
+h1{
+   display: flex;
+   justify-content: center;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   
+}
+
+
+input{
+    background-image: linear-gradient(to left, #64aeee 30%, #9bf7de 70%);
+}
+
+
+

@@ -1,56 +1,56 @@
-/* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-import "./App.css"
+import { useState } from "react";
 
-function App() {
-  const [list, setList] = useState([]);
-  const [input, setInput] = useState("");
+import Form from "./Form.js";
+import Packinglist from "./packingList.js"
 
-  const addTodo = (todo) => {
-    const newTodo = {
-      id: Math.random(),
-      todo: todo,
-    };
 
-    // add the todo to the list
-    setList([...list, newTodo]);
+export default function App() {
+  const [items, setItems] = useState([]);
 
-    //clear input box
+  function handleAddItems(item) {
+    setItems((items) => [...items, item]);
+  }
 
-    setInput("");
-  };
+  function handleDeleteItem(id) {
+    setItems((items) => items.filter((item) => item.id !== id));
+  }
 
-  //delete items
+  function handleToggleItem(id) {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  }
 
-  const deleteTodo = (id) => {
-    // here we can delete todos with same id in entry and put new array in new list
-    const newList = list.filter((todo) => todo.id !== id);
+  
 
-    setList(newList);
-  };
+  function handleClearList() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete all items?"
+    );
+
+    if (confirmed) setItems([]);
+  }
+
+
+  function handleEditItem(){
+    setItems(items.id)
+  }
 
   return (
-    
     <div className="app">
-      <h1>iKami To-do app</h1>
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
+      
+      
+      <Form onAddItems={handleAddItems} />
+      <Packinglist
+        items={items}
+        onDeleteItem={handleDeleteItem}
+        onToggleItem={handleToggleItem}
+        onClearList={handleClearList}
+        onEditItem={handleEditItem}
       />
-      <button>edit</button>
-      <button onClick={() => addTodo(input)}>Add</button>
-
-      <ul>
-        {list.map((todo) => (
-          <li key={todo.id}>
-            {todo.todo}
-            <button onClick={() => deleteTodo(todo.id)}>&times;</button>
-          </li>
-        ))}
-      </ul>
+   
     </div>
   );
 }
-
-export default App;
