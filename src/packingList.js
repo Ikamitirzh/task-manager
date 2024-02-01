@@ -9,10 +9,11 @@ export default function Packinglist({
   onEditItem
 }) {
  
+  let temp = items;
   return (
     <div className="list">
       <ul>
-        {items.map((item) => (
+        {temp.map((item) => (
           <Item
             item={item}
             onDeleteItem={onDeleteItem}

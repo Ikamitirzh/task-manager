@@ -9,7 +9,7 @@ export default function Item({ item, onDeleteItem, onToggleItem, onEditItem }) {
         <span style={item.packed ? { textDecoration: "line-through" } : {}}>
           {item.description}
         </span>
-        <button onClick={() => onEditItem(item.id)}>Edit</button>
+        <button onClick={() => onEditItem(item.id)} >Edit</button>
         <button onClick={() => onDeleteItem(item.id)}>❌</button>
       </li>
     );

@@ -4,6 +4,7 @@ import Form from "./Form.js";
 import Packinglist from "./packingList.js"
 
 
+
 export default function App() {
   const [items, setItems] = useState([]);
 
@@ -23,7 +24,7 @@ export default function App() {
     );
   }
 
-  
+ 
 
   function handleClearList() {
     const confirmed = window.confirm(
@@ -34,16 +35,15 @@ export default function App() {
   }
 
 
-  function handleEditItem(){
-    setItems(items.id)
-  }
+ 
 
   return (
     <div className="app">
       
+      <h1>ikami TodoList</h1>
+      <Form onAddItems={handleAddItems} editItem={handleEditItem} />
       
-      <Form onAddItems={handleAddItems} />
-      <Packinglist
+      <Packinglist 
         items={items}
         onDeleteItem={handleDeleteItem}
         onToggleItem={handleToggleItem}
