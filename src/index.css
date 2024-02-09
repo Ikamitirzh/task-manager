@@ -54,6 +54,18 @@ h1 {
   
 }
 
+h3{
+  text-align: center;
+  background-image: linear-gradient(to bottom,  #06b7d6 30%, #06d6a0 70%);
+  font-family: "Monoton";
+  font-size: 8rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  word-spacing: 30px;
+  letter-spacing: -5px;
+  padding: 2.4rem 0;
+}
+
 .add-form {
   background-image: linear-gradient(to bottom,#06d6a0 30%, #8bd4c1 70%);
   padding: 2.8rem 0;

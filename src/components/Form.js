@@ -35,7 +35,7 @@ export default function Form({onAddItems, editTodo, setEditTodo, items, setItems
 
         console.log(newItem);
   
-        onAddItems(newItem)
+        handleAddItems(newItem)
     
         setDescription("");
       }else{
@@ -49,6 +49,11 @@ export default function Form({onAddItems, editTodo, setEditTodo, items, setItems
      
    
     }
+
+    function handleAddItems(item) {
+      setItems((items) => [...items, item]);
+    }
+  
 
     // const hadleEditItem =(id){
 
